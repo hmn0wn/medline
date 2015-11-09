@@ -138,7 +138,7 @@ class Parser:
         wasParsed = self.parser.parse(tokens)
         if not wasParsed:
             raise ParserError("Could not parse " + sentence)
-        return tokens, self.parser.getBestParse()
+        return self.parser.getBestParse()
     
     def parseToStanfordDependencies(self, sentence):
 
@@ -167,12 +167,15 @@ class Parser:
         return Dependencies(sentence, standoffTokens, posTags, returnList)
                               
     def parseToWordsWithTag(self, sentence):
-
-        tokens, tree = self.parse(sentence)
-        standoffTokens = [standoffFromToken(sentence, token)
-                          for token in tokens]
+        tagged_sentense = ''
+        tree = self.parse(sentence)
         for token in tree.taggedYield():
-            print(token.word() + ' ' + token.tag())
+            #print(token.word() + ' ' + token.tag())
+            tagged_sentense = tagged_sentense + token.word() + ' ' + token.tag() + '\n'
+
+            #output_file.writelines(token.word() + ' ' + token.tag() + '\n')
+        return tagged_sentense
+
 
     # def setupLinux(self):
     #     self.javaHome = os.getenv("JAVA_HOME")

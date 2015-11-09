@@ -7,10 +7,11 @@ class MyTest(object):
         cls.parser = Parser()
 
 
+
     def testParse(self):
-        str = "Kate is my girlfriend."
-        print(str)
-        self.parser.parseToWordsWithTag(str)
+        str = "Vidish chem ya zanimajus po nastoyashemu. "
+
+        print(self.parser.parseToWordsWithTag(str))
 
 
         #(tokens, tree) = self.parser.parse(str)
