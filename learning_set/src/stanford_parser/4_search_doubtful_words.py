@@ -39,7 +39,7 @@ def analysisDrugLines(input_file_path, dir_path):
                     drugs_dict[word] +=1
                 else:
                     #print "get: " + word
-                    drugs_dict.update({word : 1})
+                    drugs_dict.update({word: 1})
 
         #print drugs_dict.items()
 

@@ -4,6 +4,7 @@ import urllib2
 import codecs
 import string
 import enchant
+import random
 
 from xml.etree import ElementTree
 
@@ -224,14 +225,17 @@ def markAllDrugFiles(input_dir_path, output_dir_path):
 
 
 
+
 dir_path = './../../'
 
 
 
 #markAllDrugFilesSmartly(dir_path + 'separated_drug_documents_with_tags', dir_path  + 'complited_drug_documents_with_tags_filtered', './../../drug_names_with_NCT_filtered.txt')
 #filesMerger(dir_path + 'complited_drug_documents_with_tags_filtered', dir_path + 'complited_drug_documents_with_tags_filtered.txt')
+
 markAllDrugFilesWithGlobalDict(dir_path + 'separated_drug_documents_with_tags', dir_path  + 'complited_drug_documents_with_tags_global_dict', './../../drug_dictionary_for_all_NCT.txt')
 filesMerger(dir_path + 'complited_drug_documents_with_tags_global_dict', dir_path + 'complited_drug_documents_with_tags_global_dict.txt')
+
 
 #filesMerger(dir_path + 'separated_drug_documents', dir_path + "drug_docs")
 #markAllDrugFiles(dir_path, dir_path)
